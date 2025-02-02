@@ -10,6 +10,7 @@ import CustomHeader from "./components/CustomHeader";
 import VerifyEmail from "./screens/VerifyEmail";
 import ResetPassword from "./screens/ResetPassword";
 import HomeScreen from "./screens/HomeScreen";
+import TabNavigator from "./navigators/TabNavigator";
 
 const Stack = createStackNavigator();
 
@@ -29,7 +30,7 @@ const App = () => {
         />
         <Stack.Screen
           name="HomeScreen"
-          component={HomeScreen}
+          component={TabNavigator}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -62,6 +63,11 @@ const App = () => {
           options={({ navigation }) => ({
             header: () => <CustomHeader navigation={navigation} title="" />,
           })}
+        />
+        <Stack.Screen
+          name="Tabs"
+          component={TabNavigator}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
