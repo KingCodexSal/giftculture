@@ -16,12 +16,12 @@ import ProgressBar from "react-native-progress/Bar";
 
 // Import local images
 import giftImage1 from "../assets/card1.png";
-import giftImage2 from "../assets/card1.png";
-import giftImage3 from "../assets/card1.png";
+import giftImage2 from "../assets/card2.png";
+import giftImage3 from "../assets/card3.png";
 
 const { width } = Dimensions.get("window");
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const mainCarouselRef = useRef(null);
 
   const mainCarouselData = [
@@ -114,6 +114,9 @@ const HomeScreen = () => {
           Description: {item.description}
         </Text>
         <Text>Received on: {item.received}</Text>
+        <TouchableOpacity style={styles.cardButton}>
+          <Text style={styles.cardButtonText}>View List</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -149,7 +152,12 @@ const HomeScreen = () => {
               Your recent activity at a glance.
             </Text>
           </View>
-          <Icon name="notifications-outline" size={24} color="#4A4A4A" />
+          <Icon
+            name="notifications-outline"
+            size={24}
+            color="#4A4A4A"
+            onPress={() => navigation.navigate("NotificationsScreen")}
+          />
         </View>
         <View style={styles.searchBarWrapper}>
           <Icon
@@ -300,12 +308,16 @@ const styles = StyleSheet.create({
   latestGift: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#fff",
     borderRadius: 10,
     padding: 16,
     marginTop: 12,
   },
-  giftImageSmall: { width: 60, height: 60, borderRadius: 8, marginRight: 16 },
+  giftImageSmall: {
+    width: 120,
+    height: 120,
+    borderRadius: 8,
+    marginRight: 20,
+  },
   giftFrom: { fontSize: 16, fontWeight: "600", color: "#333" },
   floatingButton: {
     position: "absolute",
@@ -322,6 +334,19 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 5,
+  },
+  cardButton: {
+    marginTop: 8,
+    borderWidth: 1,
+    borderColor: "#FF1953",
+    borderRadius: 20,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    alignItems: "center",
+  },
+  cardButtonText: {
+    color: "#FF1953",
+    fontWeight: "bold",
   },
 });
 

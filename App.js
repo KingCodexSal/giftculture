@@ -9,8 +9,8 @@ import ForgotPassword from "./screens/ForgotPassword";
 import CustomHeader from "./components/CustomHeader";
 import VerifyEmail from "./screens/VerifyEmail";
 import ResetPassword from "./screens/ResetPassword";
-import HomeScreen from "./screens/HomeScreen";
 import TabNavigator from "./navigators/TabNavigator";
+import NotificationsScreen from "./screens/NotificationsScreen";
 
 const Stack = createStackNavigator();
 
@@ -67,6 +67,11 @@ const App = () => {
         <Stack.Screen
           name="Tabs"
           component={TabNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="NotificationsScreen"
+          component={NotificationsScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
