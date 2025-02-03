@@ -56,10 +56,12 @@ const SharedGifts = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/profile.png")}
-          style={styles.profileImage}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("ProfileScreen")}>
+          <Image
+            source={require("../assets/profile.png")}
+            style={styles.profileImage}
+          />
+        </TouchableOpacity>
         <View style={styles.headerTextContainer}>
           <Text style={styles.headerTitle}>Shared Gifts</Text>
         </View>

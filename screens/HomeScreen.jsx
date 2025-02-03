@@ -142,10 +142,14 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView>
         <View style={styles.header}>
-          <Image
-            source={require("../assets/profile.png")}
-            style={styles.profileImage}
-          />
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ProfileScreen")}
+          >
+            <Image
+              source={require("../assets/profile.png")}
+              style={styles.profileImage}
+            />
+          </TouchableOpacity>
           <View style={styles.headerTextContainer}>
             <Text style={styles.welcomeText}>Welcome, Gifter</Text>
             <Text style={styles.subText}>
@@ -194,7 +198,10 @@ const HomeScreen = ({ navigation }) => {
           contentContainerStyle={{ paddingVertical: 8, paddingBottom: 20 }}
         />
       </ScrollView>
-      <TouchableOpacity style={styles.floatingButton}>
+      <TouchableOpacity
+        style={styles.floatingButton}
+        onPress={() => navigation.navigate("CreateGiftListScreen")}
+      >
         <Icon name="add" size={24} color="#fff" />
       </TouchableOpacity>
     </SafeAreaView>

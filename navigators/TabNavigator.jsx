@@ -11,6 +11,7 @@ import HomeScreen from "../screens/HomeScreen";
 import Lists from "../screens/Lists";
 import SharedGifts from "../screens/SharedGifts";
 import WalletScreen from "../screens/WalletScreen";
+import TrackOrderScreen from "../screens/TrackOrderScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
@@ -110,7 +111,7 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="SharedGifts"
+        name="Gifts"
         component={SharedGifts}
         options={{
           tabBarLabel: "Gifts",
@@ -124,6 +125,15 @@ const TabNavigator = () => {
         options={{
           tabBarLabel: "Wallet",
           tabBarIconName: "wallet",
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="Delivery"
+        component={TrackOrderScreen}
+        options={{
+          tabBarLabel: "Delivery",
+          tabBarIconName: "truck",
           headerShown: false,
         }}
       />

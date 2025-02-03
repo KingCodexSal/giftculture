@@ -11,6 +11,8 @@ import VerifyEmail from "./screens/VerifyEmail";
 import ResetPassword from "./screens/ResetPassword";
 import TabNavigator from "./navigators/TabNavigator";
 import NotificationsScreen from "./screens/NotificationsScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import CreateGiftListScreen from "./screens/CreateGiftsListsScreen";
 
 const Stack = createStackNavigator();
 
@@ -72,6 +74,15 @@ const App = () => {
         <Stack.Screen
           name="NotificationsScreen"
           component={NotificationsScreen}
+        />
+        <Stack.Screen
+          name="ProfileScreen"
+          component={ProfileScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CreateGiftListScreen"
+          component={CreateGiftListScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

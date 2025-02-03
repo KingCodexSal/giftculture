@@ -36,10 +36,12 @@ const WalletScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/profile.png")}
-          style={styles.profileImage}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("ProfileScreen")}>
+          <Image
+            source={require("../assets/profile.png")}
+            style={styles.profileImage}
+          />
+        </TouchableOpacity>
         <Text style={styles.headerTitle}>My Wallet</Text>
         <Icon
           name="notifications-outline"

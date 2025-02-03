@@ -36,7 +36,7 @@ const listsData = [
   },
 ];
 
-const Lists: React.FC = () => {
+const Lists: React.FC<{ navigation: any }> = ({ navigation }) => {
   const renderListItem = ({ item }) => (
     <View style={styles.listItem}>
       <Image source={item.image} style={styles.listImage} />
@@ -60,10 +60,12 @@ const Lists: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require("../assets/profile.png")}
-          style={styles.profileImage}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("ProfileScreen")}>
+          <Image
+            source={require("../assets/profile.png")}
+            style={styles.profileImage}
+          />
+        </TouchableOpacity>
         <Text style={styles.headerTitle}>My Gift Lists</Text>
         <TouchableOpacity style={styles.headerLinkContainer}>
           <Text style={styles.headerLink}>Share all gifts to contacts</Text>

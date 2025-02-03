@@ -5,6 +5,7 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
@@ -47,7 +48,10 @@ const NotificationsScreen = () => {
 
   const renderNotification = ({ item }) => (
     <View style={styles.notificationItem}>
-      <Icon name="person-circle-outline" size={40} color="#4A4A4A" />
+      <Image
+        source={require("../assets/profile.png")}
+        style={styles.profileImage}
+      />
       <View style={styles.notificationText}>
         <Text style={styles.message}>{item.message}</Text>
         <Text style={styles.time}>{item.time}</Text>
@@ -62,7 +66,7 @@ const NotificationsScreen = () => {
           <Icon name="arrow-back" size={24} color="#4A4A4A" />
         </TouchableOpacity>
         <Text style={styles.title}>Notifications</Text>
-        <View style={{ width: 24 }} /> {/* Placeholder for alignment */}
+        <View style={{ width: 24 }} />
       </View>
       <FlatList
         data={notifications}
@@ -78,6 +82,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 16,
+    paddingTop: 40,
   },
   header: {
     flexDirection: "row",
@@ -93,8 +98,9 @@ const styles = StyleSheet.create({
   },
   notificationItem: {
     flexDirection: "row",
-    alignItems: "center",
-    padding: 16,
+    alignItems: "flex-start",
+    paddingVertical: 12,
+    paddingHorizontal: 16,
     borderBottomWidth: 1,
     borderBottomColor: "#EDEDED",
   },
@@ -105,10 +111,19 @@ const styles = StyleSheet.create({
   message: {
     fontSize: 16,
     color: "#333",
+    fontWeight: "bold",
+    lineHeight: 22,
+    marginBottom: 4,
   },
   time: {
     fontSize: 12,
     color: "#777",
+    marginTop: 4,
+  },
+  profileImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
   },
 });
 
