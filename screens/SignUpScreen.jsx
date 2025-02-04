@@ -53,7 +53,10 @@ const SignUpScreen = ({ navigation }) => {
         By Continuing, you agree to GiftCulture's{" "}
         <Text style={styles.termsLink}>Terms & Conditions</Text>
       </Text>
-      <TouchableOpacity style={styles.signupButton}>
+      <TouchableOpacity
+        style={styles.signupButton}
+        onPress={() => navigation.navigate("HomeScreen")}
+      >
         <Text style={styles.signupText}>Sign Up</Text>
       </TouchableOpacity>
       <View style={styles.hrt}>

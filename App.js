@@ -74,6 +74,7 @@ const App = () => {
         <Stack.Screen
           name="NotificationsScreen"
           component={NotificationsScreen}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="ProfileScreen"
