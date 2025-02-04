@@ -17,7 +17,9 @@ const ProfileScreen = ({ navigation }) => {
           <Icon name="arrow-back" size={24} color="#4A4A4A" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Profile</Text>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("NotificationsScreen")}
+        >
           <Icon name="notifications-outline" size={24} color="#4A4A4A" />
         </TouchableOpacity>
       </View>
@@ -61,7 +63,10 @@ const ProfileScreen = ({ navigation }) => {
           <Text style={styles.logoutText}>Logout</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.floatingButton}>
+      <TouchableOpacity
+        style={styles.floatingButton}
+        onPress={() => navigation.navigate("CreateGiftListScreen")}
+      >
         <Icon name="add" size={24} color="#fff" />
       </TouchableOpacity>
     </SafeAreaView>

@@ -13,12 +13,6 @@ const CreateGiftListScreen = ({ navigation }) => {
   const [occasion, setOccasion] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleCreateList = () => {
-    // Handle the creation of the gift list
-    console.log("Gift List Created:", { listTitle, occasion, description });
-    // Navigate to another screen or show a success message
-  };
-
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -26,7 +20,9 @@ const CreateGiftListScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="#000" />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => console.log("Notifications")}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("NotificationsScreen")}
+        >
           <Ionicons name="notifications-outline" size={24} color="#000" />
         </TouchableOpacity>
       </View>
@@ -62,7 +58,7 @@ const CreateGiftListScreen = ({ navigation }) => {
         numberOfLines={4}
       />
 
-      <TouchableOpacity style={styles.createButton} onPress={handleCreateList}>
+      <TouchableOpacity style={styles.createButton}>
         <Text style={styles.createText}>Create</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.catalogButton}>

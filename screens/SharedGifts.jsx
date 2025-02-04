@@ -88,7 +88,10 @@ const SharedGifts = ({ navigation }) => {
         numColumns={2}
         contentContainerStyle={styles.listContainer}
       />
-      <TouchableOpacity style={styles.floatingButton}>
+      <TouchableOpacity
+        style={styles.floatingButton}
+        onPress={() => navigation.navigate("CreateGiftListScreen")}
+      >
         <Icon name="add" size={24} color="#fff" />
       </TouchableOpacity>
     </View>

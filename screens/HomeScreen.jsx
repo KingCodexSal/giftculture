@@ -14,7 +14,6 @@ import {
 import Icon from "react-native-vector-icons/Ionicons";
 import ProgressBar from "react-native-progress/Bar";
 
-// Import local images
 import giftImage1 from "../assets/card1.png";
 import giftImage2 from "../assets/card2.png";
 import giftImage3 from "../assets/card3.png";
@@ -79,7 +78,7 @@ const HomeScreen = ({ navigation }) => {
   const colors = ["#C8E6C9", "#FFCDD2", "#BBDEFB"];
 
   const renderSmallCardItem = ({ item, index }) => {
-    const progress = Math.random() * (0.45 - 0.3) + 0.3; // Random progress between 30% and 45%
+    const progress = Math.random() * (0.45 - 0.3) + 0.3;
     return (
       <View
         style={[

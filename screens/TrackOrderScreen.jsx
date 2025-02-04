@@ -19,7 +19,9 @@ const TrackOrderScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.navigate("ProfileScreen")}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ProfileScreen")}
+          >
             <Image
               source={require("../assets/profile.png")}
               style={styles.profileImage}
@@ -110,7 +112,10 @@ const TrackOrderScreen = ({ navigation }) => {
         </View>
       </ScrollView>
 
-      <TouchableOpacity style={styles.floatingButton}>
+      <TouchableOpacity
+        style={styles.floatingButton}
+        onPress={() => navigation.navigate("CreateGiftListScreen")}
+      >
         <Icon name="add" size={24} color="#fff" />
       </TouchableOpacity>
     </SafeAreaView>
